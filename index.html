@@ -11,7 +11,7 @@
 body {
 	margin: 0;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-	background: linear-gradient(135deg, #020617, #0f172a);
+	background: linear-gradient(135deg, #1e3c72, #2a5298); /* heavy blue → purple gradient */
 	color: white;
 	min-height: 100vh;
 	display: flex;
@@ -21,7 +21,7 @@ body {
 
 .wrapper {
 	width: min(900px, 94%);
-	background: rgba(2, 6, 23, 0.95);
+	background: rgba(30, 40, 70, 0.95);
 	border-radius: 22px;
 	padding: 36px;
 	box-shadow: 0 30px 70px rgba(0,0,0,0.7);
@@ -36,19 +36,19 @@ body {
 	font-weight: 700;
 	margin-top: 2em;
 	margin-bottom: 0.5em;
-	color: #38bdf8;
+	color: #38bdf8; /* bright blue headings */
 }
 
 .content p { margin: 1em 0; }
 
-.content a { color: #38bdf8; text-decoration: none; }
+.content a { color: #7f9cf5; text-decoration: none; }
 .content a:hover { text-decoration: underline; }
 
 .content ul, .content ol { padding-left: 22px; }
 .content li { margin-bottom: 0.5em; }
 
 .content pre {
-	background: #0f172a;
+	background: #2a3b5f;
 	color: #f8f8f2;
 	padding: 18px;
 	overflow-x: auto;
@@ -69,7 +69,7 @@ body {
 	padding-left: 18px;
 	color: #cbd5e1;
 	font-style: italic;
-	background: rgba(8, 20, 44, 0.6);
+	background: rgba(30, 40, 70, 0.6);
 	margin: 1.5em 0;
 	border-radius: 8px;
 	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -127,7 +127,7 @@ footer {
 	border-radius: 12px;
 	font-weight: 600;
 	transition: transform 0.15s, background 0.15s;
-	visibility: hidden;
+	visibility: hidden; /* hidden for now */
 }
 
 @keyframes fadeIn {
