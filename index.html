@@ -17,10 +17,10 @@ img{max-width:100%}
 <div id="content">Loading…</div>
 
 <script>
-fetch("doc.md")
+fetch("doc.md?"+Date.now())
 .then(r=>r.text())
 .then(t=>content.innerHTML=marked.parse(t))
-.catch(e=>content.textContent="Failed to load doc.md")
+.catch(()=>content.textContent="Failed to load doc.md")
 </script>
 
 </body>
