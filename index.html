@@ -7,77 +7,124 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 body {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     max-width: 900px;
     margin: 50px auto;
-    line-height: 1.8;
-    color: #333;
-    background: #fdfdfd;
     padding: 0 20px;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f, #a18cd1, #fbc2eb);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #333;
 }
-h1, h2, h3, h4 {
+
+@keyframes gradientBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+h1,h2,h3,h4 {
     font-weight: 700;
     margin-top: 2em;
     margin-bottom: 0.5em;
     line-height: 1.3;
 }
-h1 { border-bottom: 2px solid #ddd; padding-bottom: 0.3em; }
-h2 { border-bottom: 1px solid #eee; padding-bottom: 0.2em; }
+
+h1 {
+    font-size: 2.8em;
+    background: linear-gradient(90deg, #ff5f6d, #ffc371);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2em;
+    background: linear-gradient(90deg, #36d1dc, #5b86e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    font-size: 1.5em;
+    background: linear-gradient(90deg, #f7971e, #ffd200);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 p { margin: 1em 0; }
-a { color: #0366d6; text-decoration: none; }
+a { color: #ff6f91; text-decoration: none; font-weight:600; }
 a:hover { text-decoration: underline; }
+
 ul, ol { margin: 1em 0 1em 2em; }
 li { margin-bottom: 0.5em; }
+
 pre {
-    background: #2d2d2d;
-    color: #f8f8f2;
-    padding: 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    padding: 18px;
     overflow-x: auto;
-    border-radius: 6px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 code {
-    background: #eee;
+    background: rgba(255,255,255,0.2);
     padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: 6px;
     font-family: 'Fira Code', monospace;
     font-size: 0.95em;
 }
+
 blockquote {
-    border-left: 4px solid #bbb;
-    padding-left: 16px;
-    color: #555;
+    border-left: 6px solid #ff9a9e;
+    padding-left: 18px;
+    color: #fff;
     font-style: italic;
-    background: #f9f9f9;
+    background: linear-gradient(90deg, #ff6a88, #ff99ac);
     margin: 1.5em 0;
-    border-radius: 4px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+
 img {
     max-width: 100%;
     margin: 1em 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
 }
+img:hover {
+    transform: scale(1.02);
+}
+
 hr {
     border: none;
-    border-top: 1px solid #eee;
+    border-top: 2px dashed rgba(255,255,255,0.5);
     margin: 2em 0;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
     margin: 1em 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 table th, table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px;
     text-align: left;
 }
 table th {
-    background: #f5f5f5;
+    background: rgba(255,255,255,0.2);
+    font-weight:600;
 }
+
 ul li::marker, ol li::marker {
-    color: #0366d6;
+    color: #ff6f91;
 }
 </style>
 </head>
