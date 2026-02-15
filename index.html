@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>doc.md</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:40px auto;line-height:1.6}
+pre{background:#f5f5f5;padding:12px;overflow:auto}
+code{background:#eee;padding:2px 4px}
+blockquote{border-left:4px solid #ccc;padding-left:12px;color:#555}
+img{max-width:100%}
+</style>
+</head>
+<body>
+
+<div id="content">Loading…</div>
+
+<script>
+fetch("doc.md")
+.then(r=>r.text())
+.then(t=>content.innerHTML=marked.parse(t))
+.catch(e=>content.textContent="Failed to load doc.md")
+</script>
+
+</body>
+</html>
