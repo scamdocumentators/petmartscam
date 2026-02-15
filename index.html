@@ -30,7 +30,6 @@ body {
 
 .content {
 	line-height: 1.6;
-	display: none; /* hide content for now */
 }
 
 .content h1, .content h2, .content h3, .content h4 {
@@ -128,25 +127,19 @@ footer {
 	border-radius: 12px;
 	font-weight: 600;
 	transition: transform 0.15s, background 0.15s;
-	visibility: hidden; /* hide for now */
+	visibility: hidden;
 }
 
 @keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(12px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+	from { opacity: 0; transform: translateY(12px); }
+	to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
 <body>
 
 <div class="wrapper">
-	<div class="content" id="markdown-content">Content is hidden for now</div>
+	<div class="content" id="markdown-content">Loading documentation…</div>
 
 	<footer>
 		<span>© 2026 BullerWilliam</span>
@@ -155,17 +148,23 @@ footer {
 </div>
 
 <script>
-// Only load the markdown if you want it visible later
-// For now, hide and skip fetch
-// Example of how to load later:
-// fetch("doc.md?"+Date.now())
-// .then(r => r.text())
-// .then(t => {
-//     markdown-content.style.display = 'block';
-//     markdown-content.innerHTML = marked.parse(t);
-//     Prism.highlightAll();
-// })
-// .catch(() => markdown-content.textContent = "Failed to load doc.md")
+fetch("doc.md?"+Date.now())
+.then(response => {
+	if (!response.ok) throw new Error("Markdown file not found");
+	return response.text();
+})
+.then(text => {
+	const container = document.getElementById("markdown-content");
+	container.style.display = "block";
+	container.innerHTML = marked.parse(text);
+	Prism.highlightAll();
+})
+.catch(error => {
+	const container = document.getElementById("markdown-content");
+	container.style.display = "block";
+	container.textContent = "Failed to load doc.md — make sure it exists in the same folder as this HTML.";
+	console.error(error);
+});
 </script>
 
 </body>
