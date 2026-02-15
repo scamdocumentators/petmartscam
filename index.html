@@ -2,144 +2,163 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>PetMart Documentation</title>
+<title>doc.md</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
 body {
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 0 20px;
-    background: linear-gradient(135deg, #ffecd2, #fcb69f, #a18cd1, #fbc2eb);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    color: #333;
+	margin: 0;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+	background: linear-gradient(135deg, #020617, #0f172a);
+	color: white;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-@keyframes gradientBG {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+.wrapper {
+	width: min(900px, 94%);
+	background: rgba(2, 6, 23, 0.95);
+	border-radius: 22px;
+	padding: 36px;
+	box-shadow: 0 30px 70px rgba(0,0,0,0.7);
+	animation: fadeIn 0.6s ease;
 }
 
-h1,h2,h3,h4 {
-    font-weight: 700;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    line-height: 1.3;
+.content {
+	line-height: 1.6;
 }
 
-h1 {
-    font-size: 2.8em;
-    background: linear-gradient(90deg, #ff5f6d, #ffc371);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.content h1, .content h2, .content h3, .content h4 {
+	font-weight: 700;
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+	color: #38bdf8;
 }
 
-h2 {
-    font-size: 2em;
-    background: linear-gradient(90deg, #36d1dc, #5b86e5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.content p { margin: 1em 0; }
+
+.content a { color: #38bdf8; text-decoration: none; }
+.content a:hover { text-decoration: underline; }
+
+.content ul, .content ol { padding-left: 22px; }
+.content li { margin-bottom: 0.5em; }
+
+.content pre {
+	background: #0f172a;
+	color: #f8f8f2;
+	padding: 18px;
+	overflow-x: auto;
+	border-radius: 12px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-h3 {
-    font-size: 1.5em;
-    background: linear-gradient(90deg, #f7971e, #ffd200);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.content code {
+	background: rgba(255,255,255,0.1);
+	padding: 2px 6px;
+	border-radius: 6px;
+	font-family: 'Fira Code', monospace;
+	font-size: 0.95em;
 }
 
-p { margin: 1em 0; }
-a { color: #ff6f91; text-decoration: none; font-weight:600; }
-a:hover { text-decoration: underline; }
-
-ul, ol { margin: 1em 0 1em 2em; }
-li { margin-bottom: 0.5em; }
-
-pre {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: #fff;
-    padding: 18px;
-    overflow-x: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-code {
-    background: rgba(255,255,255,0.2);
-    padding: 2px 6px;
-    border-radius: 6px;
-    font-family: 'Fira Code', monospace;
-    font-size: 0.95em;
+.content blockquote {
+	border-left: 6px solid #38bdf8;
+	padding-left: 18px;
+	color: #cbd5e1;
+	font-style: italic;
+	background: rgba(8, 20, 44, 0.6);
+	margin: 1.5em 0;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-blockquote {
-    border-left: 6px solid #ff9a9e;
-    padding-left: 18px;
-    color: #fff;
-    font-style: italic;
-    background: linear-gradient(90deg, #ff6a88, #ff99ac);
-    margin: 1.5em 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.content img {
+	max-width: 100%;
+	margin: 1em 0;
+	border-radius: 12px;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-img {
-    max-width: 100%;
-    margin: 1em 0;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-}
-img:hover {
-    transform: scale(1.02);
+.content hr {
+	border: none;
+	border-top: 1px solid rgba(255,255,255,0.1);
+	margin: 2em 0;
 }
 
-hr {
-    border: none;
-    border-top: 2px dashed rgba(255,255,255,0.5);
-    margin: 2em 0;
+.content table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 1em 0;
+	background: rgba(255,255,255,0.05);
+	border-radius: 8px;
+	overflow: hidden;
+}
+.content table th, .content table td {
+	border: 1px solid rgba(255,255,255,0.2);
+	padding: 10px;
+	text-align: left;
+}
+.content table th {
+	background: rgba(255,255,255,0.1);
+	font-weight: 600;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 1em 0;
-    background: rgba(255,255,255,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-table th, table td {
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 10px;
-    text-align: left;
-}
-table th {
-    background: rgba(255,255,255,0.2);
-    font-weight:600;
+footer {
+	margin-top: 28px;
+	padding-top: 18px;
+	border-top: 1px solid rgba(255,255,255,0.1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	font-size: 13px;
+	opacity: 0.85;
 }
 
-ul li::marker, ol li::marker {
-    color: #ff6f91;
+.back {
+	background: #38bdf8;
+	color: #020617;
+	text-decoration: none;
+	padding: 10px 18px;
+	border-radius: 12px;
+	font-weight: 600;
+	transition: transform 0.15s, background 0.15s;
+}
+
+.back:hover {
+	background: #0ea5e9;
+	transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 </style>
 </head>
 <body>
 
-<div id="content">Loading…</div>
-
+<div class="wrapper">
+	<div class="content" id="markdown-content">Loading…</div>
+</div>
 <script>
 fetch("doc.md?"+Date.now())
-.then(r=>r.text())
-.then(t=>{
-    content.innerHTML=marked.parse(t);
-    Prism.highlightAll();
+.then(r => r.text())
+.then(t => {
+	markdown-content.innerHTML = marked.parse(t);
+	Prism.highlightAll();
 })
-.catch(()=>content.textContent="Failed to load doc.md")
+.catch(() => markdown-content.textContent = "Failed to load doc.md")
 </script>
 
 </body>
