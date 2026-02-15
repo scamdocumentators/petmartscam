@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>doc.md</title>
+<title>PetMart Documentation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
@@ -127,11 +127,7 @@ footer {
 	border-radius: 12px;
 	font-weight: 600;
 	transition: transform 0.15s, background 0.15s;
-}
-
-.back:hover {
-	background: #0ea5e9;
-	transform: translateY(-2px);
+	visibility: hidden; /* make invisible for now */
 }
 
 @keyframes fadeIn {
@@ -148,6 +144,14 @@ footer {
 </head>
 <body>
 
+<div class="wrapper">
+	<div class="content" id="markdown-content">Loading…</div>
+
+	<footer>
+		<span>© 2026 BullerWilliam</span>
+		<a class="back" href="https://bullerwilliam.github.io/">Back to Home</a>
+	</footer>
+</div>
 
 <script>
 fetch("doc.md?"+Date.now())
